@@ -1,3 +1,16 @@
-<h1>
-  {{title}}
-</h1>
+
+<input #newSubdomain
+      (keyup.enter)="addSubdomain(newSubdomain.value); newSubdomain.value=''" >
+
+<button (click)="addSubdomain(newSubdomain.value)">Add</button>
+
+
+
+<h1>Subdomains:</h1>
+<ul>
+  <li *ngFor="let subdomain of subdomains">
+    {{ subdomain.name }}
+  </li>
+</ul>
+
+<span style="color:red">{{errorMessage}}</span>
